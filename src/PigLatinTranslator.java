@@ -8,23 +8,26 @@
 // Enter a line to be translated: 
 
 import java.io.*;
+import java.util.Scanner;
 
 //Translate a sentence into pig latin
 
 public class PigLatinTranslator {
-
-	// To use for input.
-	private static BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+		
 
 	// Main method
 	public static void main(String[] args) throws IOException {
-
+		Scanner scn = new Scanner (System.in);
+		
 		System.out.println("Welcome to the Pig Latin Translator!\n");
 		
 		// Get a string
 		System.out.print("Enter a line to be translated: ");
-		String english = getString();
-
+		
+		String english = scn.nextLine();
+		
+		english = english.toLowerCase();
+		
 		// Translate and print back out
 		String latin = pigLatin(english);
 		System.out.println(latin);
@@ -82,8 +85,6 @@ public class PigLatinTranslator {
 		return 0;
 	}
 
-	private static String getString() throws IOException {
-		return buf.readLine();
-	}
+
 
 }
